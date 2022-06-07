@@ -1,0 +1,59 @@
+{% extends 'base/index.html' %} {% block content %}
+{% load static %}
+<head>
+    <title>post</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+
+    <link id="theme-style" rel="stylesheet" type="text/css" href="static/css/blue.css">
+    <link href="{% static 'images/bg.png' %}" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,500;1,500&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="nav-wrapper">
+           <div class="dots-wrapper">
+                <div id="dot1" class="browser-dot"></div>
+                <div id="dot2" class="browser-dot"></div>
+                <div id="dot3" class="browser-dot"></div>
+                        
+                    
+            </div>
+
+               <ul id="navigation">
+                   <li><a href="{% url 'home' %}">Home</a></li>
+                </ul>
+                    
+    </div>
+  
+        
+          
+                <div>
+                    <div class="post">
+
+                        <img width="640" height="640" class="thumbnail1" src="{{post.imageURL}}">
+                        <div class="post-preview">
+                            <h1 class="post-title">{% block title %} {{ object.title }} {% endblock title %}</h1>
+                            <p class="post-intro"> {{ object.content | safe }}</p>
+                            <p>{{ post.author }} | {{ post.created_on}}</p>
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+            
+
+       
+    
+    
+    <script type="text/javascript" src="static/script.js"></script>
+
+</body>
+
+{% endblock content %}
